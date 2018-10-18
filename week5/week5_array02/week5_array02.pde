@@ -17,10 +17,12 @@ float []y=new float [100];
 void setup(){
  size(800,800);
  noStroke();
- for (int ix=0; ix<100;ix++ ) { x[ix]=map(ix,0,100,0,width);};
- for (int iy=0; iy<100;iy++ ) {y[iy]=map(iy,0,100,0,height);}
+ for (int ix=0; ix<100;ix++ ) { 
+ for (int iy=0; iy<100;iy++ ){
+ x[ix]=map(ix,0,100,0,width);
+  y[iy]=map(iy,0,100,0,height);}
  }
-
+}
 
 
 

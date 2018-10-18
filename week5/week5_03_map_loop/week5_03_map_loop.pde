@@ -15,11 +15,9 @@ void setup() {
 
 void draw() {
   background(255);
-  
   for (int i = 0; i < 200; i++) {
-    
-    float xPos = map(i, 0, 20, width/2-10, width/2+10);
-    float yPos = map(i, 0, 20, height/2-50,height/2+50 );
+    float xPos = map(i, 0, 200, width/2-10, width/2+10);
+    float yPos = map(i, 0, 200, height/2-50,height/2+50 );
     pushMatrix();
     translate(xPos,yPos);
     rotate(radians(i+frameCount*0.5));

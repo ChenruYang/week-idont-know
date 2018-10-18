@@ -17,8 +17,8 @@ int gridH = 10;
  float s = 15;
 float[][] xPositions = new float[gridW][gridH];
 float[][] yPositions = new float[gridW][gridH];
-float[] dx = new float[gridW];
-float[] dy = new float[gridH];
+float[][] dx = new float[gridW][gridH];
+float[][] dy = new float[gridW][gridH];
 void setup() {
   size(800, 800);
   //noStroke();
@@ -27,8 +27,8 @@ void setup() {
     for (int j = 0; j < gridH; j++) {
       xPositions[i][j] = map(i, 0, gridW, width/2-200, width/2 + 200);
       yPositions[i][j] = map(j, 0, gridH, height/2 - 200, height/2 + 200);
-      dx[i] = random(-15, 15);
-    dy[j] = random(-15, 15);
+      dx[i][j] = random(map(i,1, gridW, -15,15));
+    dy[i][j] = random(map(j,1, gridH, -15,15));
     }
   }
 }
@@ -39,15 +39,15 @@ void draw() {
     for (int j = 0; j < gridH; j++) {
      
       ellipse(xPositions[i][j], yPositions[i][j], s, s);
-     xPositions[i][j] += dx[i];
-    yPositions[i][j] += dy[j];
+     xPositions[i][j] += dx [i][j];
+    yPositions[i][j] += dy [i][j];
     
     if (xPositions[i][j]> width- s/2 || xPositions[i][j]< s/2)
     { 
-      dx[i]= -dx[i];
+      dx[i][j]= -dx[i][j];
     }
     if (yPositions[i][j]> height-s/2 || yPositions[i][j]< s/2)
-    {dy[j]=-dy[j];
+    {dy[i][j]=-dy[i][j];
     }
   }
 }

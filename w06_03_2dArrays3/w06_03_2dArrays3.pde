@@ -21,23 +21,23 @@ float[][] angles = new float[gridW][gridH];
 
 void setup() {
   size(800, 800);
-  stroke(255);
+    stroke(123,12,132);
   for (int i = 0; i < gridW; i++) {
     for (int j = 0; j < gridH; j++) {
-      angles[i][j] = random(360);
+      angles[i][j] = map(i,0, gridW,0,360 );
     }
   }
 }
 
 void draw() {
-  background(0);
-  
+  background(222,150,0);
+
   for (int i = 0; i < gridW; i++) {
     for (int j = 0; j < gridH; j++) {
       pushMatrix();
       translate(i * width/gridW, j * height/gridH);
       rotate(radians(angles[i][j]+=3));
-      line(-width/gridW*0.5, 0, width/gridW*0.5, 0);
+      line(-width/gridW*0.1, 0, width/gridW*0.1, 0);
       popMatrix();
     }
   }
