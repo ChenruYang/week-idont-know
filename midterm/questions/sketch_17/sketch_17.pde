@@ -9,7 +9,7 @@
 // float in the loop every frame. try to add more arrays 
 // (for colors, angles, etc) if there is behavior that 
 // you want to change that doesn't involve positions.
-int num=100;
+int num=50;
 float[] xPositions=new float[num];
 float[] yPositions=new float[num];
 int s=10;
@@ -18,20 +18,22 @@ void setup() {
   size(600, 600);
   background(100);
   for (int i = 0; i < xPositions.length; i++) {
-    xPositions[i] = 0;
-    yPositions[i] = 0;
+    for (int j = 0; j < yPositions.length; j++){
+    xPositions[i] = width/2;
+    yPositions[j] = height/2;
   }
+}
 }
 
+
+
 void draw() {
+ 
   for(int i = 0; i < xPositions.length; i++){
-  rect(xPositions[i],yPositions[i],s,s);
- float r = random(2);
- if (int(r)==0){
-  xPositions[i]+=10;
- }else
-  {
-  yPositions[i]+=10;
+    for (int j = 0; j < yPositions.length; j++){
+ ellipse(xPositions[i],yPositions[j],s,s);
+ xPositions[i]+=random(-1,1);
+ yPositions[j]+=random(-1,1);
   }
-}
+  }
 }

@@ -5,10 +5,8 @@ void setup() {
   myCookie.cookieInfo();
   Coffee coffeeToPair= new Coffee("hot", "Columbian");
   coffeeToPair.coffeeInfo();
-  Cookiejar [] myJar=new Cookiejar[10];
-  
-
 }
+
 class Cookie {
   String kind;
   String size;
@@ -18,7 +16,7 @@ class Cookie {
     kind = whatKind;
     size = whatSize;
   }
-  
+
   void cookieInfo() {
     println("This cookie is a " + size + " " + kind + " cookie!");
   }
@@ -27,17 +25,26 @@ class Cookie {
   class Coffee {
   String temperature;
   String origin;
-  
+ 
+ 
   Coffee(String whattemperature, String whatorigin){
     println("It goes well with "+whattemperature+" "+ whatorigin+" "+" coffee.");
-    temperature=whattemperature;
-    origin=whatorigin;
+     this.temperature=whattemperature;
+    this.origin=whatorigin;
   }
   void coffeeInfo(){
     println(temperature+" "+ origin+" coffee is a good choice!");
   }
+  }
+  class CookieJar{
+    ArrayList<cookies> cookies = new ArrayList<cookies>();
     
-   Class Breakfast(){ 
+    CookieJar(){
+      for (int i=0; i<10;i++)
+      cookies.add(new Cookies("choclate Chip", "small"));
+   
+   Cookie
+    coo
   //void eat(String modifier) {
   //  println("You eat the cookie " + modifier);
   //}
@@ -45,5 +52,9 @@ class Cookie {
   //String getSize() {
   //  return size;
   //}
+  //
   
-}
+  
+  
+
+  

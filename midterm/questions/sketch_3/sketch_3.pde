@@ -10,7 +10,7 @@ void setup() {
 
 void draw() {
   background(150);
-  if (mouseX>width/2-100 && mouseX<width/2+100 && mouseY>height/2-100 & mouseY<height/2+100 && mousePressed) {
+  if (mousePressed && dist(mouseX,mouseY,width/2,height/2)<100) {
     fill(255);
   } else {
     fill(150);
@@ -19,5 +19,5 @@ void draw() {
   ellipse(width/2, height/2, 200, 200);
 }
 
-
+//dist(mouseX,mouseY,width/2,height/2)<100)
   
