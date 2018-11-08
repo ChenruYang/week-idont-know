@@ -9,13 +9,13 @@
 // you can use a single image located in the sketch folder and instantiating the
 // pImage with the loadImage() function in the constructor of the object. 
 
-PImage star;
+
 
 ArrayList<MyClass> myArrayList = new ArrayList<MyClass>();
 
 void setup() {
+  imageMode(CENTER);
   size(600, 600);
-  star= loadImage("star.png");
   
 }
 
@@ -46,11 +46,15 @@ class MyClass {
   float x; 
   float y;
   float timeRemaining;
+  PImage img;
+  
   
   MyClass(float x, float y) {
     this.x = x;
     this.y = y;
     this.timeRemaining = 180;
+    this.img= loadImage("star.png");
+    
   }
   
   void update() {
@@ -58,7 +62,8 @@ class MyClass {
   }
   
   void display() {
-    image(star,x, y, timeRemaining, timeRemaining);
+   
+    image(img,x, y, timeRemaining, timeRemaining);
   }
   
   boolean isTimeUp() {

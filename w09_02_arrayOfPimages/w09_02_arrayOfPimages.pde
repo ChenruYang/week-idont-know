@@ -14,7 +14,8 @@ String[] arrayOfImageFilenames= new String [3];
 PImage[] arrayOfPImages=new PImage [3];
 
 void setup() {
-size(600,600);
+
+  size(600,600);
   for (int i = 0; i < arrayOfImageFilenames.length; i++) {
       arrayOfImageFilenames[i]= new String ("image "+i+".png");
     arrayOfPImages[i] = loadImage(arrayOfImageFilenames[i]);  
@@ -22,10 +23,9 @@ size(600,600);
 }
 
 void draw() {
- background(100,100,100);
+ background(255);
  for (int i = 0; i < arrayOfImageFilenames.length; i++){
    imageMode(CENTER);
    image(arrayOfPImages[i], 100+i*(width/3),300,100,100);
-   
 }
 }

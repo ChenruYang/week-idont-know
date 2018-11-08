@@ -11,37 +11,65 @@
 // imagine the "Mario" object we've discussed in class - animating a character 
 // like that could be done in this way - creating the class to contain an array 
 // of images, and having the class's display method cycle through the frames.  
+Face face;
 
-int numFrames = 17;  // The number of frames in the animation
-int currentFrame = 0;
-PImage[] images = new PImage[numFrames];
-    
 void setup() {
   size(640, 360);
   frameRate(24);
   imageMode(CENTER);
-  
-  images[0]  = loadImage("Comp 4_00000.jpg");
-  images[1]  = loadImage("Comp 4_00002.jpg"); 
-  images[2]  = loadImage("Comp 4_00004.jpg");
-  images[3]  = loadImage("Comp 4_00006.jpg"); 
-  images[4]  = loadImage("Comp 4_00008.jpg");
-  images[5]  = loadImage("Comp 4_00010.jpg"); 
-  images[6]  = loadImage("Comp 4_00012.jpg");
-  images[7]  = loadImage("Comp 4_00014.jpg"); 
-  images[8]  = loadImage("Comp 4_00016.jpg");
-  images[9]  = loadImage("Comp 4_00018.jpg"); 
-  images[10] = loadImage("Comp 4_00020.jpg");
-  images[11] = loadImage("Comp 4_00022.jpg"); 
-  images[12] = loadImage("Comp 4_00024.jpg");
-  images[13] = loadImage("Comp 4_00026.jpg");
-  images[14] = loadImage("Comp 4_00028.jpg");
-  images[15] = loadImage("Comp 4_00030.jpg");
-  images[16] = loadImage("Comp 4_00032.jpg");
-} 
+   face = new Face();
+
+}
  
 void draw() { 
-  background(0);
-  currentFrame = (currentFrame+1) % numFrames;
-  image(images[currentFrame], width/2, height/2);
+  background(255,184,0);
+  face.update();
+  face.display();
+  
+  //this means a loop
+  
+ }
+ 
+ class Face {
+   float x, y;
+   int numFrames;
+   int currentFrame;
+   PImage[] frames;
+   
+   Face(){
+     x=0;
+     y=height/2;
+     numFrames=17;
+    currentFrame=0;
+     frames = new PImage [numFrames];
+   frames[0]  = loadImage("Comp 4_00000.jpg");
+  frames[1]  = loadImage("Comp 4_00002.jpg"); 
+  frames[2]  = loadImage("Comp 4_00004.jpg");
+  frames[3]  = loadImage("Comp 4_00006.jpg"); 
+  frames[4]  = loadImage("Comp 4_00008.jpg");
+  frames[5]  = loadImage("Comp 4_00010.jpg"); 
+  frames[6]  = loadImage("Comp 4_00012.jpg");
+  frames[7]  = loadImage("Comp 4_00014.jpg"); 
+  frames[8]  = loadImage("Comp 4_00016.jpg");
+  frames[9]  = loadImage("Comp 4_00018.jpg"); 
+  frames[10] = loadImage("Comp 4_00020.jpg");
+  frames[11] = loadImage("Comp 4_00022.jpg"); 
+  frames[12] = loadImage("Comp 4_00024.jpg");
+  frames[13] = loadImage("Comp 4_00026.jpg");
+  frames[14] = loadImage("Comp 4_00028.jpg");
+  frames[15] = loadImage("Comp 4_00030.jpg");
+  frames[16] = loadImage("Comp 4_00032.jpg");
+     
+   }
+  void update(){
+    currentFrame = (currentFrame+1) % numFrames;
+        x++;
+  }
+ 
+ void display(){
+    image(frames[currentFrame], x, y,200,200);
+
+    
+  }
+  
  }
