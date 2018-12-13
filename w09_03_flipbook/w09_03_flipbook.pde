@@ -35,12 +35,18 @@ void draw() {
    int numFrames;
    int currentFrame;
    PImage[] frames;
-   
+    //String[] arrayOfFilenames= new String [15];
+    //PImage[] frames=new PImage [15];
    Face(){
      x=0;
      y=height/2;
      numFrames=17;
     currentFrame=0;
+    //for (int i = 0; i < arrayOfFilenames.length; i+=2) {
+      //arrayOfImageFilenames[i]= new String ("image "+i+".png");
+    //frames[i] = loadImage(arrayOfFilenames[i]);  
+   
+    
      frames = new PImage [numFrames];
    frames[0]  = loadImage("Comp 4_00000.jpg");
   frames[1]  = loadImage("Comp 4_00002.jpg"); 
@@ -68,7 +74,7 @@ void draw() {
  
  void display(){
     image(frames[currentFrame], x, y,200,200);
-
+    
     
   }
   
